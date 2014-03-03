@@ -1,5 +1,11 @@
 <html>
 	<head>
+		<style>
+			img.capa {
+				width:200px;
+				height:200px;
+			}
+		</style>
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script>
 			$(document).ready(function () {
@@ -12,10 +18,51 @@
 				
 				
 				function dadoscarregados(docXML) {
+					
+					os_nos_disco = $(docXML).find("disco");
+					
+					alert(os_nos_disco.length);
+					
+					// para cada no disco
+					os_nos_disco.each(function () {
+						este_no_disco = $(this);
+						o_autor = este_no_disco.find("autor").text();
+						o_ano   = este_no_disco.find("ano").text();
+						o_album = este_no_disco.find("album").text();
+						a_capa  = este_no_disco.find("capa").text();
+						
+						// alert(o_autor);
+						
+						divdisco = $("<div></div>").addClass("disco");
+						tabela   = $("<table/>");
+						
+						linha1   = $("<tr/>");
+						
+						td11 = 	   $("<td/>").attr("rowspan","3");
+						capa = 	   $("<img/>").attr("src",a_capa).addClass("capa");
+						td11.append(capa);
+						
+						td12 = 	   $("<td/>").addClass("autor").html(o_autor);
+						
+						linha1.append(td11).append(td12);
+						
+						linha2   = $("<tr/>");
+						td22 = 	   $("<td/>").addClass("album").html(o_album);
+						linha2.append(td22);
+						
+						linha3   = $("<tr/>");
+						td32 = 	   $("<td/>").addClass("ano").html(o_ano);
+						linha3.append(td32);
+						
+						tabela.append(linha1).append(linha2).append(linha3);
+						divdisco.append(tabela);
+						$("body").append(divdisco);
+					}) 
+					
 					// procurar todos os nos *disco*
-					$(docXML).find("disco").each(function () {
-						$("body").append($("<p/>").html($(this).find("autor").text()))
-					})
+					//$(docXML).find("disco").each(function () {
+					//	$("body").append($("<p/>").html($(this).find("autor").text()))
+					//})
 					
 				}
 			})
