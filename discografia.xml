@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- comentário XML -->
+<discografia>
+	<discos>
+		<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2010</ano>
+			<album>O mesmo de sempre</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+		<disco>
+			<autor>Kátia Aveiro</autor>
+			<ano>2013</ano>
+			<album>Esperança</album>
+			<capa>http://cdn.7static.com/static/img/sleeveart/00/001/638/0000163862_350.jpg</capa>
+		</disco>
+		<disco>
+			<autor>Augusto Canário</autor>
+			<ano>2013</ano>
+			<album>Biba a Rambóia</album>
+			<capa>http://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/2/4/6/5604081480642.jpg</capa>
+		</disco>
+	</discos>
+</discografia>
