@@ -12,11 +12,6 @@
 				// $.get( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )
 				$.get("discografia.xml",dadoscarregados,"xml");
 				
-				
-				
-				
-				
-				
 				function dadoscarregados(docXML) {
 					
 					os_nos_disco = $(docXML).find("disco");
@@ -37,7 +32,6 @@
 						tabela   = $("<table/>");
 						
 						linha1   = $("<tr/>");
-						
 						td11 = 	   $("<td/>").attr("rowspan","3");
 						capa = 	   $("<img/>").attr("src",a_capa).addClass("capa");
 						td11.append(capa);
