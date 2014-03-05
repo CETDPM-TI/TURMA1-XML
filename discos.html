@@ -1,22 +1,69 @@
 <html>
 	<head>
 		<style>
-			img.capa {
-				width:200px;
-				height:200px;
+			
+			body {
+				background-color: #adc3de;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 			}
+			
+			#info,#pesq {
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			div.disco {
+				background-color: navy;
+				font-weight: bold;
+				font-size: 24px;
+				border-radius: 12px;
+				margin-bottom:10px;
+				width:400px;
+			}
+			
+			
+			#info, #pesq, div.disco {
+				margin-left:auto;
+				margin-right:auto;
+			}
+			
+			div.disco table {
+				color: silver;
+			}
+			img.capa {
+				width:120px;
+				height:120px;
+				border-radius: 10px;
+				margin:3px;
+			}
+			
 		</style>
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script>
 			$(document).ready(function () {
+				
+				var docXML;
 				// $.get( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )
 				$.get("discografia.xml",dadoscarregados,"xml");
 				
-				function dadoscarregados(docXML) {
+				$("#ipesq").keyup(atualizadiscografia);
+				
+				function dadoscarregados(dadosXML) {
+					docXML = dadosXML;
+				}
+				
+				function atualizadiscografia() {
+					
+					$("#discografia").empty();
+						
+					var a_pesq 		= $("#ipesq").val();
+					var a_pesq_RE	= new RegExp(a_pesq);
+					
+					$("#info").text( $(docXML).find("nome").text());
 					
 					os_nos_disco = $(docXML).find("disco");
 					
-					alert(os_nos_disco.length);
+					//alert(os_nos_disco.length);
 					
 					// para cada no disco
 					os_nos_disco.each(function () {
@@ -25,6 +72,10 @@
 						o_ano   = este_no_disco.find("ano").text();
 						o_album = este_no_disco.find("album").text();
 						a_capa  = este_no_disco.find("capa").text();
+						
+						if (a_pesq_RE.test(o_autor) || 
+							a_pesq_RE.test(o_album) ||
+							a_pesq_RE.test(o_ano)) {
 						
 						// alert(o_autor);
 						
@@ -50,7 +101,8 @@
 						
 						tabela.append(linha1).append(linha2).append(linha3);
 						divdisco.append(tabela);
-						$("body").append(divdisco);
+						$("#discografia").append(divdisco);
+						} // fim do if
 					}) 
 					
 					// procurar todos os nos *disco*
@@ -63,6 +115,8 @@
 		</script>
 	</head>
 	<body>
-		
+		<div id="info"></div>
+		<div id="pesq"><input type="text" id="ipesq"/></div>
+		<div id="discografia"></div>
 	</body>
 </html>

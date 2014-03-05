@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- comentário XML -->
 <discografia>
+	<nome>Música da Boa</nome>
 	<discos>
 		<disco>
 			<autor>Tony Carreira</autor>
@@ -19,6 +20,42 @@
 			<ano>2013</ano>
 			<album>Biba a Rambóia</album>
 			<capa>http://static.fnac-static.com/multimedia/PT/images_produits/PT/ZoomPE/2/4/6/5604081480642.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2010</ano>
+			<album>O mesmo de sempre</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2010</ano>
+			<album>Sem variações</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2007</ano>
+			<album>Variações</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2008</ano>
+			<album>Sempre o Mesmo</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2009</ano>
+			<album>Quase igual</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
+		</disco>
+				<disco>
+			<autor>Tony Carreira</autor>
+			<ano>2012</ano>
+			<album>Outro disco</album>
+			<capa>http://ptshark.files.wordpress.com/2010/12/tonycarreira-omesmodesempre252820102529.jpg</capa>
 		</disco>
 	</discos>
 </discografia>
